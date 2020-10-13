@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Decifrando um código</title>
+</head>
+<body>
+    <script>
+
+function cifraComCifraDeCesar( deslocamento, mensagem ) {
+
+    var Num = 0;
+    var mensagemEncriptada = "";     
+
+    for(var i = 0; i < mensagem.length; i++) {
+
+        Num = mensagem[i].charCodeAt();
+        mensagemEncriptada += String.fromCharCode(Num + deslocamento)
+        
+    }
+
+    return mensagemEncriptada;
+}
+function decifraCifraDeCesar( deslocamento, mensagemCifrada ) {
+
+    var Num = 0;
+    var mensagemDecifrada = "";
+
+    for(var i = 0; i < mensagemCifrada.length; i++) {
+
+        Num = mensagemCifrada[i].charCodeAt();
+        mensagemDecifrada += String.fromCharCode(Num - deslocamento)
+    }
+ 
+    return mensagemDecifrada;
+}
+
+    var interacao = prompt("Digite uma palavra em letras maiúsculas:")
+
+    document.write("Esta palvra cifrada é: " + cifraComCifraDeCesar(1, interacao) + "<br><br>");
+    document.write("Esta palavra decifrada é: " + decifraCifraDeCesar(0, interacao));
+
+    </script>
+    
+    
+</body>
+</html>
