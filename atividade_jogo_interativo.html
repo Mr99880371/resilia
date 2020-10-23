@@ -4,171 +4,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="jogo_no_css.css" rel="stylesheet">
+    <script defer src="jscript.js"></script>
     <title>Jogo Interativo</title>
 
 </head>
 
 <body>
-    <header id="cabeçalho">
+    <main class="topo" id="cabeçalho">
 
-        <h1>Acordamos no apocalipse do Corona. O que fazer agora?</h1>
+        <h1>Acordamos no Apocalipse do Corona. O que fazer agora?</h1>
         <p> ~ Você acordou no mundo dominado pelo Corona Vírus!! As regras são claras: Você não pode sair de casa e deve achar uma forma de sobreviver. ~ <br><br> ~ Oh não! sua comida acabou e você precisa sair de casa para conseguir mais. ~ <br><br> ~ você
             sai de casa?? ~ </p>
-        <div id="button">
+        <div class="botao" id="resultado">
             <button id="afirma" onclick="afirma()">Sim</button>
             <button id="nega" onclick="nega()">Não</button>
         </div>
-    </header>
-
-    <script>
-        //Jogo Interativo
-
-        function afirma() {
-            var texto = document.querySelector("#cabeçalho p").textContent = ('~ Você resolveu sair, mas está protegido?? ~')
-            var next = document.querySelector("#afirma")
-            var next2 = document.querySelector("#nega")
-            next.innerHTML = `<button id="afirma" onclick="afirma1()">Sim, levei uma máscara e álcool pra me proteger! :) </button>`
-            next2.innerHTML = `<button id="nega" onclick="nega1()">Não levei nada para me proteger! :( </button>`
-        }
-
-        function nega() {
-            var texto2 = document.querySelector("#cabeçalho p").textContent = ('~ Você resolveu ficar em casa, mas o problema da comida ainda não foi solucionado. ~' + '~ Você abre o seu armário e dá de cara com uma lata de sardinha fechada, o que você vai fazer? ~')
-            var next = document.querySelector("#afirma")
-            var next2 = document.querySelector("#nega")
-            next.innerHTML = `<button id="afirma" onclick="afirma2()">Abro a lata para verificar se ainda está bom o alimento</button>`
-            next2.innerHTML = `<button id="nega" onclick="nega2()">Jogo a lata fora, pois percebo que já faz um tempo e pode estar fora da validade</button>`
-        }
-
-        function afirma1() {
-            var texto = document.querySelector("#cabeçalho p").textContent = ('~ Você encontra alguns supermercados abertos, mas eles estão infestados de pessoas contaminadas e sem máscara! ~' + '~ o que você vai fazer? ~')
-            var next = document.querySelector("#afirma")
-            var next2 = document.querySelector("#nega")
-            next.innerHTML = `<button id="afirma" onclick="afirma3()">Irei procurar outros supermercados que não estejam com aglomeração</button>`
-            next2.innerHTML = `<button id="nega" onclick="nega3()">Entro no primeiro mercado que encontro porque os preços estão mais baixos que nos outros</button>`
-        }
-
-        function nega1() {
-            var texto = document.querySelector("#cabeçalho p").textContent = ('~ Você encontrou uma pessoa contaminada e foi contaminado!! ~')
-            var next = document.querySelector("#afirma")
-            next.innerHTML = `<button id="nega1" onclick="document.location.reload(true)">Game Over...</button>`
-        }
-
-        function afirma2() {
-            var texto = document.querySelector("#cabeçalho p").textContent = ('~ Oh não o alimento está estragado e era o único que você tinha guardado. o que você vai fazer agora? ~')
-            var next = document.querySelector("#afirma")
-            var next2 = document.querySelector("#nega")
-            next.innerHTML = `<button id="afirma" onclick="afirma4()">Continuo em casa e tento contatar um serviço de entrega a domicílios.</button>`
-            next2.innerHTML = `<button id="nega" onclick="nega4()">Saio de casa, pois tenho família para alimentar e preciso urgente comprar comida.</button>`
-        }
-
-        function nega2() {
-            var texto = document.querySelector("#cabeçalho p").textContent = ('~ Você jogou fora sua última lata de comida, e agora não há mais nada pra comer. o que você vai fazer agora? ~')
-            var next = document.querySelector("#afirma")
-            var next2 = document.querySelector("#nega")
-            next.innerHTML = `<button id="afirma" onclick="afirma4()">Continuo em casa e tento contatar um serviço de entrega a domicílios.</button>`
-            next2.innerHTML = `<button id="nega" onclick="nega4()">Saio de casa, pois tenho família para alimentar e preciso urgente comprar comida.</button>`
-        }
-
-        function afirma3() {
-            var texto = document.querySelector("#cabeçalho p").textContent = ('~ Encontramos um supermercado com preços bons e que não está tão cheio. Porém esse supermercado não exige o uso de máscara, e quando fomos passar no caixa a atendente parece que está muito doente, e não está usando máscara. o que você vai fazer agora? ~')
-            var next = document.querySelector("#afirma")
-            var next2 = document.querySelector("#nega")
-            next.innerHTML = `<button id="afirma" onclick="afirma5()">Peço gentilmente para a atendente colocar uma máscara.</button>`
-            next2.innerHTML = `<button id="nega" onclick="nega5()">Ignoro o estado da atendente e continuo a pagar minhas compras mesmo assim.</button>`
-        }
-
-        function nega3() {
-            var texto = document.querySelector("#cabeçalho p").textContent = ('~ Você encontrou uma pessoa contaminada e foi contaminado!! ~')
-            var next = document.querySelector("#afirma")
-            next.innerHTML = `<button id="nega" onclick="document.location.reload(true)">Game Over...</button>`
-        }
-
-        function afirma4() {
-            var texto = document.querySelector("#cabeçalho p").textContent = ('Essa não, os serviços de entrega não estão funcionando hoje e você já não tem mais o que comer em casa. o que você vai fazer agora? ~')
-            var next = document.querySelector("#afirma")
-            var next2 = document.querySelector("#nega")
-            next.innerHTML = `<button id="afirma" onclick="afirma6()">Saio na rua para tentar encontrar algo para comer.</button>`
-            next2.innerHTML = `<button id="nega" onclick="nega6()">morro de fome.</button>`
-        }
-
-        function nega4() {
-            var texto = document.querySelector("#cabeçalho p").textContent = ('~ Você resolveu sair, mas está protegido?? ~')
-            var next = document.querySelector("#afirma")
-            var next2 = document.querySelector("#nega")
-            next.innerHTML = `<button id="afirma" onclick="afirma1()">Sim, levei uma máscara e álcool pra me proteger! :) </button>`
-            next2.innerHTML = `<button id="nega" onclick="nega1()">Não levei nada para me proteger! :( </button>`
-        }
-
-        function afirma5() {
-            var texto = document.querySelector("#cabeçalho p").textContent = ('Parece que a atendente se sentiu ofendida porque você disse para ela colocar a máscara e começou a discutir com você. o que você vai fazer? ~')
-            var next = document.querySelector("#afirma")
-            var next2 = document.querySelector("#nega")
-            next.innerHTML = `<button id="afirma" onclick="afirma7()">Peço alguém para chamar o gerente para resolvermos essa situação.</button>`
-            next2.innerHTML = `<button id="nega" onclick="nega7()">Me irrito e saio do mercado sem comprar nada.</button>`
-        }
-
-        function nega5() {
-            var texto = document.querySelector("#cabeçalho p").textContent = ('~ Você foi contaminado e depois de alguns dias morreu!! ~')
-            var next = document.querySelector("#afirma")
-            next.innerHTML = `<button id="nega" onclick="document.location.reload(true)">Game Over...</button>`
-        }
-
-        function afirma6() {
-            var texto = document.querySelector("#cabeçalho p").textContent = ('~ Você resolveu sair, mas está protegido?? ~')
-            var next = document.querySelector("#afirma")
-            var next2 = document.querySelector("#nega")
-            next.innerHTML = `<button id="afirma" onclick="afirma1()">Sim, levei uma máscara e álcool pra me proteger! :) </button>`
-            next2.innerHTML = `<button id="nega" onclick="nega1()">Não levei nada para me proteger! :( </button>`
-        }
-
-        function nega6() {
-            var texto = document.querySelector("#cabeçalho p").textContent = ('~ Você morreu!! ~')
-            var next = document.querySelector("#afirma")
-            next.innerHTML = `<button id="nega" onclick="document.location.reload(true)">Game Over...</button>`
-        }
-
-        function afirma7() {
-            var texto = document.querySelector("#cabeçalho p").textContent = ('O gerente é chamado e ele apoia você pois o cliente sempre tem razão. Ele pune a funcionária e pergunta se você se importa de se dirigir até outro caixa. Você percebe que o único caixa com uma atendente com máscara está com uma fila enorme. o que você vai fazer? ~')
-            var next = document.querySelector("#afirma")
-            var next2 = document.querySelector("#nega")
-            next.innerHTML = `<button id="afirma" onclick="afirma8()">Enfrento a fila gigante, pois preciso comprar comida para mim e para minha família.</button>`
-            next2.innerHTML = `<button id="nega" onclick="nega8()">Saio desse supermercado e tento encontrar outro.</button>`
-        }
-
-        function nega7() {
-            var texto = document.querySelector("#cabeçalho p").textContent = ('Você encontra outro supermercado em que os funcionários estão mais protegidos. Porém nesse os preços são mais caros. o que você vai fazer? ~')
-            var next = document.querySelector("#afirma")
-            var next2 = document.querySelector("#nega")
-            next.innerHTML = `<button id="afirma" onclick="afirma9()">Compro nesse mercado mesmo independente do preço pois preciso levar comida para casa.</button>`
-            next2.innerHTML = `<button id="nega" onclick="nega9()">Volto para casa sem comprar nada.</button>`
-        }
-
-        function afirma8() {
-            var texto = document.querySelector("#cabeçalho p").textContent = ('~ Depois de horas na fila finalmente consigo voltar pra casa sã e salvo e com minhas compras. ~')
-            var next = document.querySelector("#afirma")
-            next.innerHTML = `<button id="afirma" onclick="afirma8()">Parabéns você venceu!!!.</button>`
-        }
-
-        function nega8() {
-            var texto = document.querySelector("#cabeçalho p").textContent = ('Você encontra outro supermercado em que os funcionários estão mais protegidos. Porém nesse os preços são mais caros. o que você vai fazer? ~')
-            var next = document.querySelector("#afirma")
-            var next2 = document.querySelector("#nega")
-            next.innerHTML = `<button id="afirma" onclick="afirma9()">Compro nesse mercado mesmo independente do preço pois preciso levar comida para casa.</button>`
-            next2.innerHTML = `<button id="nega" onclick="nega9()">Volto para casa sem comprar nada.</button>`
-        }
-
-        function afirma9() {
-            var texto = document.querySelector("#cabeçalho p").textContent = ('~ Consigo fazer minhas compras, apesar de gastar mais, mas volto pra casa sã e salvo. ~')
-            var next = document.querySelector("#afirma")
-            next.innerHTML = `<button id="afirma" onclick="afirma8()">Parabéns você venceu!!!.</button>`
-        }
-
-        function nega9() {
-            var texto = document.querySelector("#cabeçalho p").textContent = ('~ Você voltou para casa, mas como não há nada para comer, você morreu!! ~')
-            var next = document.querySelector("#afirma")
-            next.innerHTML = `<button id="nega" onclick="document.location.reload(true)">Game Over...</button>`
-        }
-    </script>
+    </main>
 
 </body>
 
