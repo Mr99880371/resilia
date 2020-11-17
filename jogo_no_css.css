@@ -15,7 +15,8 @@ h1 {
     text-align: center;
     width: 80%;
     vertical-align: top;
-    color: black;
+    color: white;
+    background-color: black;
     font-size: 30px;
     font-weight: bold;
     font-style: solid;
@@ -27,13 +28,15 @@ p {
     display: inline-block;
     text-align: center;
     width: 80%;
-    color: black;
+    padding: 80px;
+    color: white;
+    background-color: black;
     font-size: 20px;
     font-weight: bold;
     font-style: solid;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     text-decoration: none;
-    padding: 0 45px 0;
+    padding: 0 55px 0;
 }
 
 .botao {
